@@ -7,7 +7,8 @@ import java.util.stream.IntStream;
 /**
  * This class creates the structure of a deck of cards. Since a deck of cards doesn't necessarily have a fixed size
  * (although it does start with 52 cards), it can have cards removed when dealt. Therefore, instead of choosing
- * a fixed array, an arrayList allows for greater versatility in representing a deck of cards.
+ * a fixed array, an arrayList allows for greater versatility in representing a deck of cards. In some sense, an object
+ * of this class will act as a register over all the cards entering a card game.
  */
 public class DeckOfCards {
     private List<PlayingCard> deckOfCards;
