@@ -16,6 +16,10 @@ public class DeckOfCards {
     private final int numOfFaces = 13;
     private final int maxSizeOfDeck = suit.length * numOfFaces;
 
+    /**
+     * This is a constructor, which initializes the deckOfCards list and fills it with a standard 52 card, 13 face, 4
+     * suit deck.
+     */
     public DeckOfCards() {
         //Initializing deckOfCards with a starting capacity of 52;
         this.deckOfCards = new ArrayList<>(maxSizeOfDeck);
@@ -28,6 +32,10 @@ public class DeckOfCards {
 
     }
 
+    /**
+     * This method retrieves the deck of cards list.
+     * @return Deck of cards, represented as a List of PlayingCard.
+     */
     public List<PlayingCard> getDeckOfCards() {
         return deckOfCards;
     }
