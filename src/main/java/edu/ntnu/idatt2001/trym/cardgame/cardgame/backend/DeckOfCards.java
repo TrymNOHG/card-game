@@ -27,7 +27,9 @@ public class DeckOfCards {
 
     }
 
-
+    public List<PlayingCard> getDeckOfCards() {
+        return deckOfCards;
+    }
 }
 
 //TODO: Add unit test for the stream and constructor.
