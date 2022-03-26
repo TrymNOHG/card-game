@@ -42,7 +42,7 @@ public class HandOfCards {
      * @return     String of cards, if there are any, with suit. If there are none, then No (suit) string is returned
      */
     public String printHandInfoBySuit(char suit){
-        List<String> filteredList = filterHandBySuit(suit).stream().map(playingCard -> playingCard.toString()).toList();
+        List<String> filteredList = filterHandBySuit(suit).stream().map(playingCard -> playingCard.getAsString()).toList();
         if(filteredList.size() < 1){
             return "No " + suit;
         }
