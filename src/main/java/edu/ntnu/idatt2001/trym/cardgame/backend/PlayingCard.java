@@ -53,8 +53,4 @@ public class PlayingCard {
         return face;
     }
 
-    @Override
-    public String toString() {
-        return suit + String.valueOf(face);
-    }
 }
