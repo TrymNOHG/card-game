@@ -1,28 +1,33 @@
 package edu.ntnu.idatt2001.trym.cardgame.cardgame.backend;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.IntStream;
 
+/**
+ * This class creates the structure of a deck of cards. Since a deck of cards doesn't necessarily have a fixed size
+ * (although it does start with 52 cards), it can have cards removed when dealt. Therefore, instead of choosing
+ * a fixed array, an arrayList allows for greater versatility in representing a deck of cards.
+ */
 public class DeckOfCards {
-    private PlayingCard[] deckOfCards;
+    private List<PlayingCard> deckOfCards;
     private final char[] suit = { 'S', 'H', 'D', 'C' };
     private final int numOfFaces = 13;
+    private final int maxSizeOfDeck = suit.length * numOfFaces;
 
     public DeckOfCards() {
-        //Potentially add a status variable in PlayingCard to know if it is in the deck: boolean inDeck or something
-        this.deckOfCards = new PlayingCard[52];
+        //Initializing deckOfCards with a starting capacity of 52;
+        this.deckOfCards = new ArrayList<>(maxSizeOfDeck);
 
         /*
-        An int stream which goes through all indices of the deckOfCards array and inserts all the combinations of
+        An int stream which goes through all indices of the deckOfCards arrayList and inserts all the combinations of
         faces and suits
         */
-        IntStream.range(0, this.deckOfCards.length).forEach(i -> this.deckOfCards[i] = new PlayingCard(suit[i % suit.length], (i % numOfFaces) + 1));
-
-
-//        for(int i = 1; i <= numOfFaces; i++) {
-//            for (int j = 1; j <= suit.length; j++) {
-//                this.deckOfCards[i * j] = new PlayingCard(suit[j], i);
-//            }
-//        }
+        IntStream.range(0, maxSizeOfDeck).forEach(i -> this.deckOfCards.set(i, new PlayingCard(suit[i % suit.length], (i % numOfFaces) + 1)));
 
     }
+
+
 }
+
+//TODO: Add unit test for the stream and constructor.
