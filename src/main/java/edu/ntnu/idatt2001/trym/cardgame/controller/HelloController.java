@@ -1,4 +1,4 @@
-package edu.ntnu.idatt2001.trym.cardgame.cardgame;
+package edu.ntnu.idatt2001.trym.cardgame.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

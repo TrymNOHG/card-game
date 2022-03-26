@@ -1,4 +1,4 @@
-package edu.ntnu.idatt2001.trym.cardgame.cardgame.backend;
+package edu.ntnu.idatt2001.trym.cardgame.backend;
 
 import java.util.ArrayList;
 import java.util.List;

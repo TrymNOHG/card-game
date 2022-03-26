@@ -1,4 +1,4 @@
-package edu.ntnu.idatt2001.trym.cardgame.cardgame.backend;
+package edu.ntnu.idatt2001.trym.cardgame.backend;
 
 /**
  * Represents a playing card. A playing card has a number (face) between
