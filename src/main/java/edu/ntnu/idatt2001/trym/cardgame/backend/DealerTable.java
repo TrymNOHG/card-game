@@ -23,9 +23,8 @@ public class DealerTable {
      * This method deals a hand of size n, as long as there are an n-number of cards left in the deck. If n is
      * an invalid number, smaller than 1 or more than the deck size, then an IllegalArgumentException is thrown.
      * @param n Number of cards desired, represented as an int
-     * @return  Hand of size n, represented as a List of randomly chosen PlayingCards.
      */
-    public List<PlayingCard> dealHand(int n){
+    public void dealHand(int n){
         List<PlayingCard> hand = new ArrayList<>();
         if(n < 1 || n > this.tableDeck.getDeckOfCards().size()) throw new IllegalArgumentException("The hand size is invalid!");
 
@@ -41,7 +40,7 @@ public class DealerTable {
             this.tableDeck.getDeckOfCards().remove(randomNum);
         });
 
-        return hand;
+        this.currentHandList.add(new HandOfCards(hand));
     }
     //TODO: add unit test for this method and constructor.
 }
