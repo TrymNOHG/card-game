@@ -39,6 +39,10 @@ public class HandOfCards {
                 .anyMatch(playingCard -> suit == playingCard.getSuit() && face == playingCard.getFace());
     }
 
+    public boolean checkForFlush(){
+        return filterHandBySuit('S').size() == 5 || filterHandBySuit('H').size() == 5
+                || filterHandBySuit('D').size() == 5 || filterHandBySuit('C').size() == 5;
+    }
 }
 
 
