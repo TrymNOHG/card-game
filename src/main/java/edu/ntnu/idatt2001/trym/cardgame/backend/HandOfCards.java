@@ -1,12 +1,13 @@
 package edu.ntnu.idatt2001.trym.cardgame.backend;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * This class outlines the information and methods that are intrinsic to a hand of cards. Therefore, the hand of cards
  * has been represented using an arrayList of PlayingCards.
  */
-public class HandOfCards {
+public class HandOfCards implements Iterable<PlayingCard> {
     private List<PlayingCard> handOfCards;
 
     /**
@@ -69,6 +70,19 @@ public class HandOfCards {
     public boolean checkForFlush(){
         return filterHandBySuit('S').size() == 5 || filterHandBySuit('H').size() == 5
                 || filterHandBySuit('D').size() == 5 || filterHandBySuit('C').size() == 5;
+    }
+
+    @Override
+    public Iterator<PlayingCard> iterator() {
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("This Hand of Cards contains: ");
+        this.handOfCards.stream().forEach(playingCard -> sb.append(playingCard.getAsString()).append(" "));
+        return sb.toString();
     }
 }
 
