@@ -20,6 +20,20 @@ public class HandOfCards {
                 .reduce(0, Integer::sum);
     }
 
+    public List<PlayingCard> filterHandBySuit(char suit){
+        return this.handOfCards.stream().filter(playingCard -> playingCard.getSuit() == suit).toList();
+    }
+
+    public String printHandInfo(char suit){
+        List<String> filteredList = filterHandBySuit(suit).stream().map(playingCard -> playingCard.toString()).toList();
+        if(filteredList.size() < 1){
+            return "No " + suit;
+        }
+        else{
+            return String.join(" ", filteredList);
+        }
+    }
+
 }
 
 
