@@ -34,6 +34,11 @@ public class HandOfCards {
         }
     }
 
+    public boolean doesCardExistOnHand(char suit, int face){
+        return this.handOfCards.stream()
+                .anyMatch(playingCard -> suit == playingCard.getSuit() && face == playingCard.getFace());
+    }
+
 }
 
 
