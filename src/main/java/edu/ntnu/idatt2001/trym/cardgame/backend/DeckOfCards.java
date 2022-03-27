@@ -28,7 +28,7 @@ public class DeckOfCards {
         An int stream which goes through all indices of the deckOfCards arrayList and inserts all the combinations of
         faces and suits
         */
-        IntStream.range(0, maxSizeOfDeck).forEach(i -> this.deckOfCards.set(i, new PlayingCard(suit[i % suit.length], (i % numOfFaces) + 1)));
+        IntStream.range(0, maxSizeOfDeck).forEach(i -> this.deckOfCards.add(i, new PlayingCard(suit[i % suit.length], (i % numOfFaces) + 1)));
 
     }
 
