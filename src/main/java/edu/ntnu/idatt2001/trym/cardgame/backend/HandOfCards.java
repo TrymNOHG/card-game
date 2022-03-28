@@ -72,6 +72,14 @@ public class HandOfCards implements Iterable<PlayingCard> {
                 || filterHandBySuit('D').size() == 5 || filterHandBySuit('C').size() == 5;
     }
 
+    /**
+     * This method retrieves the list of PlayingCards on the hand.
+     * @return Hand of cards, represented as a list of PlayingCards
+     */
+    public List<PlayingCard> getHandOfCards() {
+        return handOfCards;
+    }
+
     @Override
     public Iterator<PlayingCard> iterator() {
         return null;
