@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,6 +15,21 @@ import java.util.ResourceBundle;
 public class ObligGameController implements Initializable {
 
     DealerTable dealerTable;
+
+    @FXML
+    private ImageView cardFive;
+
+    @FXML
+    private ImageView cardFour;
+
+    @FXML
+    private ImageView cardThree;
+
+    @FXML
+    private ImageView cardTwo;
+
+    @FXML
+    private ImageView cardOne;
 
     @FXML
     private TextField cardsOfHeartText;
@@ -28,11 +45,12 @@ public class ObligGameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        DealerTable dealerTable = new DealerTable();
+        dealerTable = new DealerTable();
     }
 
     @FXML
     public void pressCheckHand(ActionEvent event) {
+        if(dealerTable.getCurrentHandList().size() == 0) return;
         printSumOfFaces();
         printFlushStatus();
         printCardsOfHearts();
@@ -45,6 +63,7 @@ public class ObligGameController implements Initializable {
         //Pre-set to five, as per poker rules.
         dealerTable.dealHand(5);
         resetHandInfo();
+        linkCardPictures();
     }
 
     /**
@@ -91,6 +110,18 @@ public class ObligGameController implements Initializable {
         flushText.clear();
         cardsOfHeartText.clear();
         queenOfSpadesText.clear();
+    }
+
+    private void linkCardPictures(){
+        cardOne.setImage(new Image(getPicturePath(dealerTable.getCurrentHandList().get(0).getHandOfCards().get(0).getAsString())));
+        cardTwo.setImage(new Image(getPicturePath(dealerTable.getCurrentHandList().get(0).getHandOfCards().get(1).getAsString())));
+        cardThree.setImage(new Image(getPicturePath(dealerTable.getCurrentHandList().get(0).getHandOfCards().get(2).getAsString())));
+        cardFour.setImage(new Image(getPicturePath(dealerTable.getCurrentHandList().get(0).getHandOfCards().get(3).getAsString())));
+        cardFive.setImage(new Image(getPicturePath(dealerTable.getCurrentHandList().get(0).getHandOfCards().get(4).getAsString())));
+    }
+
+    private String getPicturePath(String pictureName){
+        return "edu/ntnu/idatt2001/trym/cardgame/cardpictures/" + pictureName + ".png";
     }
 
 }
