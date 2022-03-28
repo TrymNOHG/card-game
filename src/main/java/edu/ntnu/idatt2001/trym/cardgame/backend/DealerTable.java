@@ -43,6 +43,9 @@ public class DealerTable {
     }
     //TODO: add unit test for this method and constructor.
 
+    /**
+     * This method resets the deck of cards with 52 PlayCard and starts a new list for currentHand.
+     */
     public void newTable(){
         this.tableDeck = new DeckOfCards();
         this.currentHandList = new ArrayList<>();
