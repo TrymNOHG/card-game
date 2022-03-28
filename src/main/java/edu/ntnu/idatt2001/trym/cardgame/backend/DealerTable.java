@@ -15,8 +15,7 @@ public class DealerTable {
     Random random = new Random();
 
     public DealerTable() {
-        this.tableDeck = new DeckOfCards();
-        currentHandList = new ArrayList<>();
+        newTable();
     }
 
     /**
@@ -43,4 +42,25 @@ public class DealerTable {
         this.currentHandList.add(new HandOfCards(hand));
     }
     //TODO: add unit test for this method and constructor.
+
+    public void newTable(){
+        this.tableDeck = new DeckOfCards();
+        this.currentHandList = new ArrayList<>();
+    }
+
+    /**
+     * This method retrieves the current deckOfCards
+     * @return Deck Of Cards, represented as a list of PlayingCards
+     */
+    public DeckOfCards getTableDeck() {
+        return tableDeck;
+    }
+
+    /**
+     * This method retrieves a list of all the hands around the table currently.
+     * @return A list of all the hands around the table, represented as a list of HandOfCards
+     */
+    public List<HandOfCards> getCurrentHandList() {
+        return currentHandList;
+    }
 }
